@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ładowanie Licznika PWS...</title>
+    <style>
+        /* Styl dla ekranu ładowania - estetyczny wygląd na komputerze i telefonie */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .loader { 
+            text-align: center; 
+            padding: 20px;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #107c41;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px auto;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        h2 { font-size: 20px; margin: 10px 0; color: #1f2937; }
+        p { color: #6b7280; font-size: 14px; }
+        a { color: #107c41; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="loader">
+        <div class="spinner"></div>
+        <h2>Trwa ładowanie Licznika PWS...</h2>
+        <p>Jeśli strona nie przekieruje Cię automatycznie, <a href="https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/edit?gid=2052610161#gid=2052610161">kliknij tutaj</a>.</p>
+    </div>
+
+    <script>
+        // Sprawdzamy, czy użytkownik wchodzi z telefonu czy komputera
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (isMobile) {
+            // OPTYMALIZACJA MOBILNA: htmlview daje lekki, czysty widok tabeli idealny na ekrany telefonów
+            window.location.href = "https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/edit?gid=2052610161#gid=2052610161";
+        } else {
+            // WIDOK KOMPUTEROWY: rm=minimal ukrywa zbędne menu i zostawia maksimum miejsca na tabelę oraz zachowuje blokadę wierszy
+            window.location.href = "https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/edit?gid=2052610161#gid=2052610161";
+        }
+    </script>
+
+</body>
+</html>
