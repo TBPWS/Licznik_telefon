@@ -2,33 +2,60 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <!-- Blokada zoomu zapobiega "rozjeżdżaniu" się tabeli na małym ekranie -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Licznik PWS</title>
+    <title>Licznik PWS - Mobilny</title>
     <style>
-        /* Te style blokują marginesy i dopasowują stronę do ekranu smartfona */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
             overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #ffffff;
         }
-        /* Ramka zajmuje 100% ekranu i wymusza poprawne suwaki z Google */
+        /* Pasek narzędziowy dopasowany rozmiarem do palca na telefonie */
+        .mobile-toolbar {
+            height: 44px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #e0e0e0;
+            box-sizing: border-box;
+        }
+        /* Przycisk na telefonie: duży, łatwy do kliknięcia kciukiem */
+        .btn-mobile {
+            background-color: #107c41;
+            color: white;
+            padding: 6px 14px;
+            text-decoration: none;
+            border-radius: 20px; /* Zaokrąglony kształt modern-mobile */
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        /* Pełnoekranowa ramka pod przyciskiem - bez białego nagłówka Google */
         iframe {
             position: absolute;
-            top: 0;
+            top: 44px;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: calc(100% - 44px);
             border: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- TUTAJ: zamiast /edit wpisałem /preview, co usunie pasek tytułowy z telefonu -->
-    <iframe src="https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/preview?gid=2052610161#gid=2052610161"></iframe>
+    <div class="mobile-toolbar">
+        <!-- Ten link otwiera pełną aplikację na telefonie, gdzie blokada wierszy i kolumn DZIAŁA -->
+        <a href="https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/edit?gid=1068566876#gid=1068566876" target="_blank" class="btn-mobile">🔓 Włącz pełną blokadę wierszy</a>
+    </div>
+
+    <!-- Widok pubhtml gwarantuje brak białego paska z nazwą na telefonie -->
+    <iframe src="https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/pubhtml?gid=1068566876#gid=1068566876"></iframe>
 
 </body>
 </html>
