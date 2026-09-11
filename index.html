@@ -2,33 +2,33 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Przekierowanie do Arkusza...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Licznik PWS</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* Te style blokują marginesy i dopasowują stronę do ekranu smartfona */
+        html, body {
             margin: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #ffffff;
         }
-        .loader { text-align: center; }
+        /* Ramka zajmuje 100% ekranu i wymusza poprawne suwaki z Google */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
 
-    <div class="loader">
-        <h2>Trwa ładowanie arkusza...</h2>
-        <p>Jeśli strona nie przekieruje Cię automatycznie, <a href="https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/edit?gid=2052610161#gid=2052610161">kliknij tutaj</a>.</p>
-    </div>
-
-    <script>
-        // TUTAJ dodany parametr /htmlview zamiast /edit, który usuwa niechciany nagłówek na telefonie
-        window.location.href = "https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/htmlview?gid=2052610161#gid=2052610161";
-    </script>
+    <!-- TUTAJ: zamiast /edit wpisałem /preview, co usunie pasek tytułowy z telefonu -->
+    <iframe src="https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/preview?gid=2052610161#gid=2052610161"></iframe>
 
 </body>
 </html>
