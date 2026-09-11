@@ -2,50 +2,67 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ładowanie Licznika PWS...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Licznik PWS</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* Sztywne zablokowanie przewijania głównego okna GitHub Pages */
+        html, body {
             margin: 0;
-            background-color: #f4f6f9;
-            color: #333;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #ffffff;
         }
-        .loader { text-align: center; padding: 20px; }
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border-left-color: #107c41;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px auto;
+        /* Pozycjonowanie absolutne zamyka suwaki wewnątrz Google Sheets i aktywuje blokadę wierszy */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        h2 { font-size: 20px; margin: 10px 0; color: #1f2937; }
-        p { color: #6b7280; font-size: 14px; }
-        a { color: #107c41; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="loader">
-        <div class="spinner"></div>
-        <h2>Trwa ładowanie Licznika PWS...</h2>
-        <p>Jeśli strona nie przekieruje Cię automatycznie, <a href="https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/edit?gid=2052610161#gid=2052610161">kliknij tutaj</a>.</p>
-    </div>
+    <!-- Adres z parametrem /embed oraz widget=false całkowicie kasuje biały pasek i wymusza blokadę freeze -->
+    <iframe src="<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Licznik PWS</title>
+    <style>
+        /* Sztywne zablokowanie przewijania głównego okna GitHub Pages */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+        /* Pozycjonowanie absolutne zamyka suwaki wewnątrz Google Sheets i aktywuje blokadę wierszy */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
 
-    <script>
-        // Uniwersalny, bezpieczny link z parametrem rm=minimal, który ukrywa paski tytułowe i zachowuje blokadę wierszy
-        var targetUrl = "https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/edit?gid=2052610161#gid=2052610161";
-        
-        // Przekierowanie bezpośrednie dla każdego urządzenia
-        window.location.href = targetUrl;
-    </script>
+    <!-- Adres z parametrem /embed oraz widget=false całkowicie kasuje biały pasek i wymusza blokadę freeze -->
+    <iframe src="https://docs.google.com/spreadsheets/d/1OmkKHiEm0jA9nhygs3UV8yOkhDYt3EntSV4YZf-zf8U/edit?gid=2052610161#gid=2052610161/embed/widget=false"></iframe>
+
+</body>
+</html>
+"></iframe>
 
 </body>
 </html>
